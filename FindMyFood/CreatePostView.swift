@@ -12,6 +12,8 @@ struct CreatePostView: View {
     @State private var nearbyRestaurants = [MKMapItem]()
     @State private var selectedRestaurant: MKMapItem?
     @State private var showImagePicker = false
+    @State private var temporaryAnnotations = [MKPointAnnotation]()
+
     var onPostAdded: () -> Void
 
     var body: some View {
@@ -27,8 +29,9 @@ struct CreatePostView: View {
                 }
                 Spacer()
             }
-            
-            MapView(region: $locationManager.region, annotations: user.posts)
+
+            // MapView showing temporary annotations for selected restaurant
+            MapView(region: $locationManager.region, posts: [], temporaryAnnotations: temporaryAnnotations)
                 .edgesIgnoringSafeArea(.all)
                 .frame(height: 300) // Adjust the height as needed
 
@@ -45,8 +48,7 @@ struct CreatePostView: View {
                 VStack(spacing: 10) {
                     ForEach(searchText.isEmpty ? sortedRestaurants() : searchResults, id: \.self) { item in
                         Button(action: {
-                            selectedRestaurant = item
-                            dropPin(for: item)
+                            selectRestaurant(item)
                         }) {
                             VStack(alignment: .leading) {
                                 Text(item.name ?? "Unknown")
@@ -147,9 +149,20 @@ struct CreatePostView: View {
         }
     }
 
+    private func selectRestaurant(_ restaurant: MKMapItem) {
+        selectedRestaurant = restaurant
+        dropPin(for: restaurant)
+    }
+
     private func dropPin(for item: MKMapItem) {
         locationManager.region.center = item.placemark.coordinate
         locationManager.region.span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+
+        temporaryAnnotations.removeAll()
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = item.placemark.coordinate
+        annotation.title = item.name
+        temporaryAnnotations.append(annotation)
     }
 
     private func calculateDistance(from item: MKMapItem) -> Double? {
@@ -171,6 +184,6 @@ struct CreatePostView: View {
 
 struct CreatePostView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil), uploadedImage: .constant(nil), user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile"))), onPostAdded: {})
+        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil), uploadedImage: .constant(nil), user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), onPostAdded: {})
     }
 }

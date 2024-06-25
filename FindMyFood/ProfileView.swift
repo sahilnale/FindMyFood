@@ -3,15 +3,43 @@ import SwiftUI
 struct ProfileView: View {
     @Binding var user: User
     @Binding var isLoggedIn: Bool
+    @State private var showImagePicker = false
+    @State private var newProfileImage: UIImage?
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
-            if let profilePicture = user.profilePicture {
-                Image(uiImage: profilePicture)
+            ZStack(alignment: .bottomTrailing) {
+                if let profilePicture = user.profilePicture {
+                    Image(uiImage: profilePicture)
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: 100, height: 100)
+                        .onTapGesture {
+                            showImagePicker = true
+                        }
+                } else {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: 100, height: 100)
+                        .onTapGesture {
+                            showImagePicker = true
+                        }
+                }
+                
+                // Edit icon overlay
+                Image(systemName: "pencil.circle.fill")
                     .resizable()
+                    .frame(width: 30, height: 30)
+                    .background(Color.white)
                     .clipShape(Circle())
-                    .frame(width: 100, height: 100)
+                    .offset(x: -10, y: -10)
+                    .onTapGesture {
+                        showImagePicker = true
+                    }
             }
+
             Text(user.name)
                 .font(.title)
                 .padding()
@@ -32,15 +60,25 @@ struct ProfileView: View {
             Spacer()
         }
         .padding()
+        .sheet(isPresented: $showImagePicker, onDismiss: updateProfilePicture) {
+            ImagePicker(image: $newProfileImage)
+        }
     }
 
-    func logout() {
+    private func updateProfilePicture() {
+        if let newProfileImage = newProfileImage {
+            user.profilePicture = newProfileImage
+        }
+    }
+
+    private func logout() {
         isLoggedIn = false
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile"))), isLoggedIn: .constant(true))
+        ProfileView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), isLoggedIn: .constant(true))
     }
 }

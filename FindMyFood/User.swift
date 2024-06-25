@@ -6,17 +6,40 @@ class User: Hashable, Equatable {
     var profilePicture: UIImage?
     var posts: [Post]
     var friends: [User]
+    var friendRequests: [User]
 
-    init(name: String, profilePicture: UIImage? = nil, friends: [User] = []) {
+    init(name: String, profilePicture: UIImage? = nil, friends: [User] = [], friendRequests: [User] = []) {
         self.name = name
         self.profilePicture = profilePicture
         self.posts = []
         self.friends = friends
+        self.friendRequests = friendRequests
     }
 
     func addPost(image: UIImage, location: CLLocationCoordinate2D) {
         let post = Post(image: image, location: location)
         posts.append(post)
+    }
+
+    func addFriend(_ friend: User) {
+        friends.append(friend)
+    }
+
+    func removeFriend(_ friend: User) {
+        friends.removeAll { $0 == friend }
+    }
+
+    func addFriendRequest(_ user: User) {
+        friendRequests.append(user)
+    }
+
+    func acceptFriendRequest(_ user: User) {
+        friendRequests.removeAll { $0 == user }
+        addFriend(user)
+    }
+
+    func rejectFriendRequest(_ user: User) {
+        friendRequests.removeAll { $0 == user }
     }
 
     static func == (lhs: User, rhs: User) -> Bool {

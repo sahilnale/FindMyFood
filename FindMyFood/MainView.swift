@@ -20,7 +20,7 @@ struct MainView: View {
     var body: some View {
         ZStack {
             if isLoggedIn {
-                MapView(region: $locationManager.region, annotations: annotations)
+                MapView(region: $locationManager.region, posts: annotations, temporaryAnnotations: [])
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {

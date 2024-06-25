@@ -3,7 +3,8 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
-    var annotations: [Post]
+    var posts: [Post]
+    var temporaryAnnotations: [MKPointAnnotation]
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -16,10 +17,13 @@ struct MapView: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.setRegion(region, animated: true)
         uiView.removeAnnotations(uiView.annotations)
-        let mapAnnotations = annotations.map { post -> CustomAnnotation in
+        
+        let postAnnotations = posts.map { post -> CustomAnnotation in
             return CustomAnnotation(coordinate: post.location, image: post.image)
         }
-        uiView.addAnnotations(mapAnnotations)
+        
+        uiView.addAnnotations(postAnnotations)
+        uiView.addAnnotations(temporaryAnnotations)
     }
 
     func makeCoordinator() -> Coordinator {
@@ -38,15 +42,16 @@ struct MapView: UIViewRepresentable {
                 return nil
             }
 
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: CustomAnnotationView.identifier)
-
-            if annotationView == nil {
-                annotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: CustomAnnotationView.identifier)
-            } else {
-                annotationView?.annotation = annotation
-            }
-
             if let customAnnotation = annotation as? CustomAnnotation {
+                let identifier = "CustomAnnotation"
+                var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                if annotationView == nil {
+                    annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                    annotationView?.canShowCallout = true
+                } else {
+                    annotationView?.annotation = annotation
+                }
+
                 let bubbleView = SpeechBubbleView(frame: CGRect(x: 0, y: 0, width: 100, height: 120))
                 bubbleView.image = customAnnotation.image
 
@@ -56,9 +61,19 @@ struct MapView: UIViewRepresentable {
                     bubbleView.centerXAnchor.constraint(equalTo: annotationView!.centerXAnchor),
                     bubbleView.bottomAnchor.constraint(equalTo: annotationView!.topAnchor, constant: 10) // Adjust to align correctly
                 ])
+                return annotationView
+            } else if annotation is MKPointAnnotation {
+                let identifier = "TemporaryAnnotation"
+                var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                if annotationView == nil {
+                    annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                    annotationView?.canShowCallout = true
+                } else {
+                    annotationView?.annotation = annotation
+                }
+                return annotationView
             }
-
-            return annotationView
+            return nil
         }
     }
 
