@@ -99,7 +99,7 @@ struct MainView: View {
             ProfileView(user: $user, isLoggedIn: $isLoggedIn)
         }
         .sheet(isPresented: $showFriends) {
-            FriendListView(user: $user)
+            FriendListView(user: user)
         }
     }
 }

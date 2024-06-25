@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class User: Hashable, Equatable {
+class User: Hashable, Equatable,ObservableObject,Identifiable {
     var name: String
     var profilePicture: UIImage?
     var posts: [Post]

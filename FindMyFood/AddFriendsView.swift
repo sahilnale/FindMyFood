@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct FriendRequestsView: View {
+struct AddFriendsView: View {
     @ObservedObject var user: User
+    @State private var searchText = ""
+    @State private var searchResults = [User]()
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -17,16 +19,20 @@ struct FriendRequestsView: View {
                         .padding()
                 }
                 Spacer()
-                Text("Friend Requests")
+                Text("Add Friends")
                     .font(.title2)
                     .padding()
                 Spacer()
             }
 
+            TextField("Search for friends", text: $searchText, onCommit: searchFriends)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
             List {
-                ForEach(user.friendRequests) { request in
+                ForEach(searchResults) { result in
                     HStack {
-                        if let profileImage = request.profilePicture {
+                        if let profileImage = result.profilePicture {
                             Image(uiImage: profileImage)
                                 .resizable()
                                 .clipShape(Circle())
@@ -39,21 +45,14 @@ struct FriendRequestsView: View {
                                 .frame(width: 50, height: 50)
                                 .padding(4)
                         }
-                        Text(request.name)
+                        Text(result.name)
                             .font(.headline)
                         Spacer()
                         Button(action: {
-                            acceptFriendRequest(request)
+                            sendFriendRequest(result)
                         }) {
-                            Text("Accept")
+                            Text("Add")
                                 .foregroundColor(.blue)
-                        }
-                        .padding()
-                        Button(action: {
-                            rejectFriendRequest(request)
-                        }) {
-                            Text("Reject")
-                                .foregroundColor(.red)
                         }
                         .padding()
                     }
@@ -64,19 +63,22 @@ struct FriendRequestsView: View {
         .padding()
     }
 
-    private func acceptFriendRequest(_ request: User) {
-        user.acceptFriendRequest(request)
+    private func searchFriends() {
+        // Simulate searching for friends
+        searchResults = [
+            User(name: "John Smith", profilePicture: UIImage(named: "profile_picture")),
+            User(name: "Jane Doe", profilePicture: UIImage(named: "profile_picture"))
+        ].filter { $0.name.contains(searchText) }
     }
 
-    private func rejectFriendRequest(_ request: User) {
-        user.rejectFriendRequest(request)
+    private func sendFriendRequest(_ user: User) {
+        // Simulate sending a friend request
+        print("Friend request sent to \(user.name)")
     }
 }
 
-struct FriendRequestsView_Previews: PreviewProvider {
+struct AddFriendsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendRequestsView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friendRequests: [
-            User(name: "John Doe", profilePicture: UIImage(named: "profile_picture"))
-        ]))
+        AddFriendsView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture")))
     }
 }

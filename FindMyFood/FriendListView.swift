@@ -1,35 +1,62 @@
 import SwiftUI
 
 struct FriendListView: View {
-    @Binding var user: User
+    @ObservedObject var user: User
     @State private var showFriendRequests = false
-    @State private var friends: [User]
-
-    init(user: Binding<User>) {
-        self._user = user
-        self._friends = State(initialValue: user.wrappedValue.friends)
-    }
+    @State private var showAddFriends = false
+    @State private var isDeleteMode = false
+    @State private var forceRefresh = false
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
             HStack {
-                Text("Friends")
-                    .font(.largeTitle)
-                    .padding()
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25) // Adjusted icon size
+                        .padding(.horizontal, 10) // Reduced horizontal padding
+                }
                 Spacer()
+                Text("Friends")
+                    .font(.largeTitle) // Adjusted font size
+                    .padding(.horizontal, 10) // Reduced horizontal padding
+                Spacer()
+                Button(action: {
+                    showAddFriends = true
+                }) {
+                    Image(systemName: "person.crop.circle.badge.plus")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25) // Adjusted icon size
+                        .padding(.horizontal, 10) // Reduced horizontal padding
+                }
                 Button(action: {
                     showFriendRequests = true
                 }) {
-                    Image(systemName: "person.badge.plus")
+                    Image(systemName: "envelope.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 30, height: 30)
-                        .padding()
+                        .frame(width: 25, height: 25) // Adjusted icon size
+                        .padding(.horizontal, 10) // Reduced horizontal padding
+                }
+                Button(action: {
+                    isDeleteMode.toggle()
+                }) {
+                    Image(systemName: "trash.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25) // Adjusted icon size
+                        .padding(.horizontal, 10) // Reduced horizontal padding
+                        .foregroundColor(isDeleteMode ? .red : .primary)
                 }
             }
 
             List {
-                ForEach(friends, id: \.self) { friend in
+                ForEach(user.friends, id: \.self) { friend in
                     HStack {
                         if let profileImage = friend.profilePicture {
                             Image(uiImage: profileImage)
@@ -46,37 +73,51 @@ struct FriendListView: View {
                         }
                         Text(friend.name)
                             .font(.headline)
+                            .padding(.trailing, 10) // Reduced trailing padding
                         Spacer()
-                        Button(action: {
-                            removeFriend(friend)
-                        }) {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
+                        if isDeleteMode {
+                            Button(action: {
+                                removeFriend(friend)
+                            }) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
+                                    .padding(.horizontal, 5) // Reduced horizontal padding
+                                    .padding(.vertical, 2) // Reduced vertical padding
+                            }
                         }
-                        .padding()
                     }
+                    .padding(.vertical, 5) // Reduced vertical padding for each row
                 }
             }
             .listStyle(PlainListStyle())
         }
-        .padding()
+        .padding(10) // Reduced overall padding
         .sheet(isPresented: $showFriendRequests) {
-            FriendRequestsView(user: $user)
+            FriendRequestsView(user: user)
+        }
+        .sheet(isPresented: $showAddFriends) {
+            AddFriendsView(user: user)
+        }
+        .onChange(of: forceRefresh) { _ in
+            // This will trigger a re-render when forceRefresh changes
         }
     }
 
     private func removeFriend(_ friend: User) {
-        user.removeFriend(friend)
-        friends = user.friends // Update the local state to trigger a rerender
+        // Update the user object directly, which is observed by the view
+        if let index = user.friends.firstIndex(of: friend) {
+            user.friends.remove(at: index)
+            forceRefresh.toggle() // Trigger a re-render
+        }
     }
 }
 
 struct FriendListView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendListView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
+        FriendListView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
             User(name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
             User(name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
             User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
-        ])))
+        ]))
     }
 }
