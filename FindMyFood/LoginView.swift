@@ -5,6 +5,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showCreateAccount = false
+    @StateObject private var viewModel = AuthViewModel()
 
     var body: some View {
         VStack {
@@ -23,8 +24,14 @@ struct LoginView: View {
                 .padding(.bottom, 20)
 
             Button(action: {
-                // Assume login is successful and navigate to map view
-                isLoggedIn = true
+                Task {
+                    do {
+                        try await viewModel.signIn(withEmail: email, password: password)
+                        isLoggedIn = true
+                    } catch {
+                        print("Failed to sign in: \(error.localizedDescription)")
+                    }
+                }
             }) {
                 Text("Login")
                     .foregroundColor(.white)
@@ -35,7 +42,6 @@ struct LoginView: View {
             .padding()
 
             Button(action: {
-                // Show create account view
                 showCreateAccount = true
             }) {
                 Text("Create Account")
