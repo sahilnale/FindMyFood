@@ -16,6 +16,7 @@ struct MainView: View {
         User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
     ])
     @State private var annotations = [Post]()
+    @State private var forceRefresh = false
 
     var body: some View {
         ZStack {
@@ -35,6 +36,7 @@ struct MainView: View {
                                     .clipShape(Circle())
                                     .frame(width: 60, height: 60)
                                     .padding(4)
+                                    .id(forceRefresh) // Force re-render
                             } else {
                                 Image(systemName: "person.crop.circle")
                                     .resizable()
@@ -44,6 +46,7 @@ struct MainView: View {
                                     .background(Color.white)
                                     .clipShape(Circle())
                                     .shadow(radius: 2)
+                                    .id(forceRefresh) // Force re-render
                             }
                         }
                         .frame(width: 60, height: 60)
@@ -96,7 +99,9 @@ struct MainView: View {
             }
         }
         .sheet(isPresented: $showProfile) {
-            ProfileView(user: $user, isLoggedIn: $isLoggedIn)
+            ProfileView(user: $user, isLoggedIn: $isLoggedIn, onProfilePictureChanged: {
+                forceRefresh.toggle() // Trigger re-render
+            })
         }
         .sheet(isPresented: $showFriends) {
             FriendListView(user: user)

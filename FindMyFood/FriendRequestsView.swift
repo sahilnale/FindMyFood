@@ -47,6 +47,7 @@ struct FriendRequestsView: View {
                         }) {
                             Text("Accept")
                                 .foregroundColor(.blue)
+                                .font(.subheadline)
                         }
                         .padding()
                         Button(action: {
@@ -54,6 +55,7 @@ struct FriendRequestsView: View {
                         }) {
                             Text("Reject")
                                 .foregroundColor(.red)
+                                .font(.subheadline)
                         }
                         .padding()
                     }

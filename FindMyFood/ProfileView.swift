@@ -6,6 +6,7 @@ struct ProfileView: View {
     @State private var showImagePicker = false
     @State private var newProfileImage: UIImage?
     @Environment(\.presentationMode) var presentationMode
+    var onProfilePictureChanged: () -> Void
 
     var body: some View {
         VStack {
@@ -27,14 +28,14 @@ struct ProfileView: View {
                             showImagePicker = true
                         }
                 }
-                
+
                 // Edit icon overlay
                 Image(systemName: "pencil.circle.fill")
                     .resizable()
                     .frame(width: 30, height: 30)
                     .background(Color.white)
                     .clipShape(Circle())
-                    .offset(x: -10, y: -10)
+                    .offset(x: -3, y: -1)
                     .onTapGesture {
                         showImagePicker = true
                     }
@@ -68,6 +69,7 @@ struct ProfileView: View {
     private func updateProfilePicture() {
         if let newProfileImage = newProfileImage {
             user.profilePicture = newProfileImage
+            onProfilePictureChanged() // Call the re-render function
         }
     }
 
@@ -79,6 +81,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), isLoggedIn: .constant(true))
+        ProfileView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), isLoggedIn: .constant(true), onProfilePictureChanged: {})
     }
 }
