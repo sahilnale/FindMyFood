@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */; };
-		BAC56DC12C2A68A80028D59F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DC02C2A68A80028D59F /* ContentView.swift */; };
+		BAC56DC12C2A68A80028D59F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DC02C2A68A80028D59F /* LoginView.swift */; };
 		BAC56DC32C2A68AB0028D59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC56DC22C2A68AB0028D59F /* Assets.xcassets */; };
 		BAC56DC62C2A68AB0028D59F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC56DC52C2A68AB0028D59F /* Preview Assets.xcassets */; };
 		BAC56DD02C2A68AB0028D59F /* FindMyFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DCF2C2A68AB0028D59F /* FindMyFoodTests.swift */; };
 		BAC56DDA2C2A68AB0028D59F /* FindMyFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DD92C2A68AB0028D59F /* FindMyFoodUITests.swift */; };
 		BAC56DDC2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DDB2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift */; };
+		BAC56DE92C2A6CDE0028D59F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DE82C2A6CDE0028D59F /* MapView.swift */; };
+		BAC56DEB2C2A6E4F0028D59F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DEA2C2A6E4F0028D59F /* MainView.swift */; };
+		BAC56DED2C2A71FB0028D59F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DEC2C2A71FB0028D59F /* LocationManager.swift */; };
+		BAC56DEF2C2A7A520028D59F /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DEE2C2A7A520028D59F /* CreateAccountView.swift */; };
+		BAC56DF12C2A7B490028D59F /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DF02C2A7B490028D59F /* CreatePostView.swift */; };
+		BAC56DF32C2A7F300028D59F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DF22C2A7F300028D59F /* ProfileView.swift */; };
+		BAC56DF52C2A7F8C0028D59F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DF42C2A7F8C0028D59F /* ImagePicker.swift */; };
+		BAC56DF72C2A80B10028D59F /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DF62C2A80B10028D59F /* ProfileManager.swift */; };
+		BAC56DF92C2A89130028D59F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DF82C2A89130028D59F /* FriendListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,7 @@
 /* Begin PBXFileReference section */
 		BAC56DBB2C2A68A80028D59F /* FindMyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodApp.swift; sourceTree = "<group>"; };
-		BAC56DC02C2A68A80028D59F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BAC56DC02C2A68A80028D59F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BAC56DC22C2A68AB0028D59F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAC56DC52C2A68AB0028D59F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BAC56DCB2C2A68AB0028D59F /* FindMyFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +53,15 @@
 		BAC56DD52C2A68AB0028D59F /* FindMyFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC56DD92C2A68AB0028D59F /* FindMyFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodUITests.swift; sourceTree = "<group>"; };
 		BAC56DDB2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAC56DE82C2A6CDE0028D59F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BAC56DEA2C2A6E4F0028D59F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BAC56DEC2C2A71FB0028D59F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BAC56DEE2C2A7A520028D59F /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		BAC56DF02C2A7B490028D59F /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		BAC56DF22C2A7F300028D59F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BAC56DF42C2A7F8C0028D59F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		BAC56DF62C2A80B10028D59F /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		BAC56DF82C2A89130028D59F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +113,17 @@
 			isa = PBXGroup;
 			children = (
 				BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */,
-				BAC56DC02C2A68A80028D59F /* ContentView.swift */,
+				BAC56DE82C2A6CDE0028D59F /* MapView.swift */,
+				BAC56DC02C2A68A80028D59F /* LoginView.swift */,
+				BAC56DEE2C2A7A520028D59F /* CreateAccountView.swift */,
+				BAC56DF82C2A89130028D59F /* FriendListView.swift */,
 				BAC56DC22C2A68AB0028D59F /* Assets.xcassets */,
+				BAC56DEA2C2A6E4F0028D59F /* MainView.swift */,
+				BAC56DF22C2A7F300028D59F /* ProfileView.swift */,
+				BAC56DF62C2A80B10028D59F /* ProfileManager.swift */,
+				BAC56DF42C2A7F8C0028D59F /* ImagePicker.swift */,
+				BAC56DF02C2A7B490028D59F /* CreatePostView.swift */,
+				BAC56DEC2C2A71FB0028D59F /* LocationManager.swift */,
 				BAC56DC42C2A68AB0028D59F /* Preview Content */,
 			);
 			path = FindMyFood;
@@ -257,8 +284,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC56DC12C2A68A80028D59F /* ContentView.swift in Sources */,
+				BAC56DF32C2A7F300028D59F /* ProfileView.swift in Sources */,
+				BAC56DF72C2A80B10028D59F /* ProfileManager.swift in Sources */,
+				BAC56DEF2C2A7A520028D59F /* CreateAccountView.swift in Sources */,
+				BAC56DF12C2A7B490028D59F /* CreatePostView.swift in Sources */,
+				BAC56DF52C2A7F8C0028D59F /* ImagePicker.swift in Sources */,
+				BAC56DC12C2A68A80028D59F /* LoginView.swift in Sources */,
+				BAC56DEB2C2A6E4F0028D59F /* MainView.swift in Sources */,
+				BAC56DED2C2A71FB0028D59F /* LocationManager.swift in Sources */,
+				BAC56DF92C2A89130028D59F /* FriendListView.swift in Sources */,
 				BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */,
+				BAC56DE92C2A6CDE0028D59F /* MapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +455,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyFood/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show you nearby food spots even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you nearby food spots.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +485,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyFood/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show you nearby food spots even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you nearby food spots.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
