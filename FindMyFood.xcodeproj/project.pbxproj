@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA41B5422C2A9A4900E6FDC3 /* PostImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41B5412C2A9A4900E6FDC3 /* PostImagePicker.swift */; };
+		BA41B5442C2A9D2B00E6FDC3 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41B5432C2A9D2B00E6FDC3 /* CustomAnnotationView.swift */; };
+		BA41B5462C2AA19100E6FDC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41B5452C2AA19100E6FDC3 /* User.swift */; };
 		BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */; };
 		BAC56DC12C2A68A80028D59F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DC02C2A68A80028D59F /* LoginView.swift */; };
 		BAC56DC32C2A68AB0028D59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC56DC22C2A68AB0028D59F /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA41B5412C2A9A4900E6FDC3 /* PostImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImagePicker.swift; sourceTree = "<group>"; };
+		BA41B5432C2A9D2B00E6FDC3 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		BA41B5452C2AA19100E6FDC3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAC56DBB2C2A68A80028D59F /* FindMyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodApp.swift; sourceTree = "<group>"; };
 		BAC56DC02C2A68A80028D59F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 			children = (
 				BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */,
 				BAC56DE82C2A6CDE0028D59F /* MapView.swift */,
+				BA41B5452C2AA19100E6FDC3 /* User.swift */,
+				BA41B5432C2A9D2B00E6FDC3 /* CustomAnnotationView.swift */,
 				BAC56DC02C2A68A80028D59F /* LoginView.swift */,
 				BAC56DEE2C2A7A520028D59F /* CreateAccountView.swift */,
 				BAC56DF82C2A89130028D59F /* FriendListView.swift */,
@@ -122,6 +130,7 @@
 				BAC56DF22C2A7F300028D59F /* ProfileView.swift */,
 				BAC56DF62C2A80B10028D59F /* ProfileManager.swift */,
 				BAC56DF42C2A7F8C0028D59F /* ImagePicker.swift */,
+				BA41B5412C2A9A4900E6FDC3 /* PostImagePicker.swift */,
 				BAC56DF02C2A7B490028D59F /* CreatePostView.swift */,
 				BAC56DEC2C2A71FB0028D59F /* LocationManager.swift */,
 				BAC56DC42C2A68AB0028D59F /* Preview Content */,
@@ -287,10 +296,13 @@
 				BAC56DF32C2A7F300028D59F /* ProfileView.swift in Sources */,
 				BAC56DF72C2A80B10028D59F /* ProfileManager.swift in Sources */,
 				BAC56DEF2C2A7A520028D59F /* CreateAccountView.swift in Sources */,
+				BA41B5422C2A9A4900E6FDC3 /* PostImagePicker.swift in Sources */,
 				BAC56DF12C2A7B490028D59F /* CreatePostView.swift in Sources */,
 				BAC56DF52C2A7F8C0028D59F /* ImagePicker.swift in Sources */,
+				BA41B5462C2AA19100E6FDC3 /* User.swift in Sources */,
 				BAC56DC12C2A68A80028D59F /* LoginView.swift in Sources */,
 				BAC56DEB2C2A6E4F0028D59F /* MainView.swift in Sources */,
+				BA41B5442C2A9D2B00E6FDC3 /* CustomAnnotationView.swift in Sources */,
 				BAC56DED2C2A71FB0028D59F /* LocationManager.swift in Sources */,
 				BAC56DF92C2A89130028D59F /* FriendListView.swift in Sources */,
 				BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */,

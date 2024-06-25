@@ -4,11 +4,15 @@ import MapKit
 struct CreatePostView: View {
     @ObservedObject var locationManager: LocationManager
     @Binding var selectedLocation: CLLocationCoordinate2D?
+    @Binding var uploadedImage: UIImage?
+    @Binding var user: User
     @Environment(\.presentationMode) var presentationMode
     @State private var searchText = ""
     @State private var searchResults = [MKMapItem]()
     @State private var nearbyRestaurants = [MKMapItem]()
     @State private var selectedRestaurant: MKMapItem?
+    @State private var showImagePicker = false
+    var onPostAdded: () -> Void
 
     var body: some View {
         VStack {
@@ -24,7 +28,7 @@ struct CreatePostView: View {
                 Spacer()
             }
             
-            MapView(region: $locationManager.region, annotation: selectedRestaurant?.placemark.coordinate)
+            MapView(region: $locationManager.region, annotations: user.posts)
                 .edgesIgnoringSafeArea(.all)
                 .frame(height: 300) // Adjust the height as needed
 
@@ -71,13 +75,9 @@ struct CreatePostView: View {
             .padding([.leading, .trailing, .top], 10)
 
             Button(action: {
-                // Pass the selected restaurant's coordinates back to MainView
-                if let selectedRestaurant = selectedRestaurant {
-                    selectedLocation = selectedRestaurant.placemark.coordinate
-                    presentationMode.wrappedValue.dismiss()
-                }
+                showImagePicker = true
             }) {
-                Text("Select Restaurant")
+                Text("Upload Picture")
                     .foregroundColor(.blue)
                     .padding()
                     .background(Color.clear)
@@ -88,6 +88,18 @@ struct CreatePostView: View {
                     )
             }
             .padding()
+            .sheet(isPresented: $showImagePicker) {
+                PostImagePicker(image: $uploadedImage)
+                    .onDisappear {
+                        if let selectedRestaurant = selectedRestaurant, let uploadedImage = uploadedImage {
+                            user.addPost(image: uploadedImage, location: selectedRestaurant.placemark.coordinate)
+                            selectedLocation = selectedRestaurant.placemark.coordinate
+                            // Notify MainView about the new post
+                            onPostAdded()
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+            }
         }
         .padding()
         .onAppear(perform: fetchNearbyRestaurants)
@@ -159,6 +171,6 @@ struct CreatePostView: View {
 
 struct CreatePostView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil))
+        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil), uploadedImage: .constant(nil), user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile"))), onPostAdded: {})
     }
 }

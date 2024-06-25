@@ -1,46 +1,45 @@
 import SwiftUI
 
 struct FriendListView: View {
-    @Environment(\.presentationMode) var presentationMode
-
-    var friends = ["Nikhil Kichili", "Krishna Dua", "Dhruv Patak"]
+    @Binding var user: User
 
     var body: some View {
         VStack {
-            HStack {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(.blue)
-                        .padding()
-                }
-                Spacer()
-            }
-            .padding()
+            Text("Friends")
+                .font(.largeTitle)
+                .padding()
 
-            ScrollView {
-                VStack(spacing: 20) {
-                    ForEach(friends, id: \.self) { friend in
-                        VStack {
-                            Text(friend)
-                                .font(.headline)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 2)
-                        .padding([.leading, .trailing], 10)
+            List(user.friends, id: \.self) { friend in
+                HStack {
+                    if let profileImage = friend.profilePicture {
+                        Image(uiImage: profileImage)
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 50, height: 50)
+                            .padding(4)
+                    } else {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .padding(4)
                     }
+                    Text(friend.name)
+                        .font(.headline)
                 }
             }
+            .listStyle(PlainListStyle())
         }
+        .padding()
     }
 }
 
 struct FriendListView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendListView()
+        FriendListView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
+            User(name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
+            User(name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
+            User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
+        ])))
     }
 }

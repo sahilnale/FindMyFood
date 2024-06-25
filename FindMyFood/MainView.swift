@@ -1,19 +1,26 @@
 import SwiftUI
 import CoreLocation
+import MapKit
 
 struct MainView: View {
     @StateObject private var locationManager = LocationManager()
-    @StateObject private var profileManager = ProfileManager()
     @State private var isLoggedIn = false
     @State private var showCreatePost = false
     @State private var showProfile = false
     @State private var showFriends = false
     @State private var selectedLocation: CLLocationCoordinate2D?
+    @State private var uploadedImage: UIImage?
+    @State private var user = User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
+        User(name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
+        User(name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
+        User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
+    ])
+    @State private var annotations = [Post]()
 
     var body: some View {
         ZStack {
             if isLoggedIn {
-                MapView(region: $locationManager.region, annotation: selectedLocation)
+                MapView(region: $locationManager.region, annotations: annotations)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
@@ -22,11 +29,11 @@ struct MainView: View {
                         Button(action: {
                             showProfile = true
                         }) {
-                            if let profileImage = profileManager.profileImage {
+                            if let profileImage = user.profilePicture {
                                 Image(uiImage: profileImage)
                                     .resizable()
                                     .clipShape(Circle())
-                                    .frame(width: 60, height: 60) // Make the profile button the same size as the add post button
+                                    .frame(width: 60, height: 60)
                                     .padding(4)
                             } else {
                                 Image(systemName: "person.crop.circle")
@@ -77,14 +84,22 @@ struct MainView: View {
                 LoginView(isLoggedIn: $isLoggedIn)
             }
         }
+        .onAppear {
+            annotations = user.posts
+        }
+        .onChange(of: user.posts) { newPosts in
+            annotations = newPosts
+        }
         .sheet(isPresented: $showCreatePost) {
-            CreatePostView(locationManager: locationManager, selectedLocation: $selectedLocation)
+            CreatePostView(locationManager: locationManager, selectedLocation: $selectedLocation, uploadedImage: $uploadedImage, user: $user) {
+                annotations = user.posts // Update the annotations explicitly
+            }
         }
         .sheet(isPresented: $showProfile) {
-            ProfileView(profileManager: profileManager, isLoggedIn: $isLoggedIn)
+            ProfileView(user: $user, isLoggedIn: $isLoggedIn)
         }
         .sheet(isPresented: $showFriends) {
-            FriendListView()
+            FriendListView(user: $user)
         }
     }
 }
