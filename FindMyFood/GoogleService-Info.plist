@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAzODljS5B6ZmUMHNcqvWAfLxuqCG9ShMo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009846760007</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>UCLA.FindMyFood</string>
+	<key>PROJECT_ID</key>
+	<string>findmyfood-678a8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>findmyfood-678a8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009846760007:ios:60df13a6e7da47dd007762</string>
+</dict>
+</plist>
