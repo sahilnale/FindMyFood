@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */; };
+		BAC56DC12C2A68A80028D59F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DC02C2A68A80028D59F /* ContentView.swift */; };
+		BAC56DC32C2A68AB0028D59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC56DC22C2A68AB0028D59F /* Assets.xcassets */; };
+		BAC56DC62C2A68AB0028D59F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC56DC52C2A68AB0028D59F /* Preview Assets.xcassets */; };
+		BAC56DD02C2A68AB0028D59F /* FindMyFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DCF2C2A68AB0028D59F /* FindMyFoodTests.swift */; };
+		BAC56DDA2C2A68AB0028D59F /* FindMyFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DD92C2A68AB0028D59F /* FindMyFoodUITests.swift */; };
+		BAC56DDC2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC56DDB2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAC56DCC2C2A68AB0028D59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAC56DB32C2A68A80028D59F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAC56DBA2C2A68A80028D59F;
+			remoteInfo = FindMyFood;
+		};
+		BAC56DD62C2A68AB0028D59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAC56DB32C2A68A80028D59F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAC56DBA2C2A68A80028D59F;
+			remoteInfo = FindMyFood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAC56DBB2C2A68A80028D59F /* FindMyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodApp.swift; sourceTree = "<group>"; };
+		BAC56DC02C2A68A80028D59F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BAC56DC22C2A68AB0028D59F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAC56DC52C2A68AB0028D59F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAC56DCB2C2A68AB0028D59F /* FindMyFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC56DCF2C2A68AB0028D59F /* FindMyFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodTests.swift; sourceTree = "<group>"; };
+		BAC56DD52C2A68AB0028D59F /* FindMyFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC56DD92C2A68AB0028D59F /* FindMyFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodUITests.swift; sourceTree = "<group>"; };
+		BAC56DDB2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAC56DB82C2A68A80028D59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DC82C2A68AB0028D59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DD22C2A68AB0028D59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAC56DB22C2A68A80028D59F = {
+			isa = PBXGroup;
+			children = (
+				BAC56DBD2C2A68A80028D59F /* FindMyFood */,
+				BAC56DCE2C2A68AB0028D59F /* FindMyFoodTests */,
+				BAC56DD82C2A68AB0028D59F /* FindMyFoodUITests */,
+				BAC56DBC2C2A68A80028D59F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAC56DBC2C2A68A80028D59F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAC56DBB2C2A68A80028D59F /* FindMyFood.app */,
+				BAC56DCB2C2A68AB0028D59F /* FindMyFoodTests.xctest */,
+				BAC56DD52C2A68AB0028D59F /* FindMyFoodUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAC56DBD2C2A68A80028D59F /* FindMyFood */ = {
+			isa = PBXGroup;
+			children = (
+				BAC56DBE2C2A68A80028D59F /* FindMyFoodApp.swift */,
+				BAC56DC02C2A68A80028D59F /* ContentView.swift */,
+				BAC56DC22C2A68AB0028D59F /* Assets.xcassets */,
+				BAC56DC42C2A68AB0028D59F /* Preview Content */,
+			);
+			path = FindMyFood;
+			sourceTree = "<group>";
+		};
+		BAC56DC42C2A68AB0028D59F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BAC56DC52C2A68AB0028D59F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BAC56DCE2C2A68AB0028D59F /* FindMyFoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAC56DCF2C2A68AB0028D59F /* FindMyFoodTests.swift */,
+			);
+			path = FindMyFoodTests;
+			sourceTree = "<group>";
+		};
+		BAC56DD82C2A68AB0028D59F /* FindMyFoodUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BAC56DD92C2A68AB0028D59F /* FindMyFoodUITests.swift */,
+				BAC56DDB2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift */,
+			);
+			path = FindMyFoodUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAC56DBA2C2A68A80028D59F /* FindMyFood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC56DDF2C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFood" */;
+			buildPhases = (
+				BAC56DB72C2A68A80028D59F /* Sources */,
+				BAC56DB82C2A68A80028D59F /* Frameworks */,
+				BAC56DB92C2A68A80028D59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindMyFood;
+			productName = FindMyFood;
+			productReference = BAC56DBB2C2A68A80028D59F /* FindMyFood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAC56DCA2C2A68AB0028D59F /* FindMyFoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC56DE22C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFoodTests" */;
+			buildPhases = (
+				BAC56DC72C2A68AB0028D59F /* Sources */,
+				BAC56DC82C2A68AB0028D59F /* Frameworks */,
+				BAC56DC92C2A68AB0028D59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAC56DCD2C2A68AB0028D59F /* PBXTargetDependency */,
+			);
+			name = FindMyFoodTests;
+			productName = FindMyFoodTests;
+			productReference = BAC56DCB2C2A68AB0028D59F /* FindMyFoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BAC56DD42C2A68AB0028D59F /* FindMyFoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC56DE52C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFoodUITests" */;
+			buildPhases = (
+				BAC56DD12C2A68AB0028D59F /* Sources */,
+				BAC56DD22C2A68AB0028D59F /* Frameworks */,
+				BAC56DD32C2A68AB0028D59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAC56DD72C2A68AB0028D59F /* PBXTargetDependency */,
+			);
+			name = FindMyFoodUITests;
+			productName = FindMyFoodUITests;
+			productReference = BAC56DD52C2A68AB0028D59F /* FindMyFoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAC56DB32C2A68A80028D59F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					BAC56DBA2C2A68A80028D59F = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					BAC56DCA2C2A68AB0028D59F = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = BAC56DBA2C2A68A80028D59F;
+					};
+					BAC56DD42C2A68AB0028D59F = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = BAC56DBA2C2A68A80028D59F;
+					};
+				};
+			};
+			buildConfigurationList = BAC56DB62C2A68A80028D59F /* Build configuration list for PBXProject "FindMyFood" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAC56DB22C2A68A80028D59F;
+			productRefGroup = BAC56DBC2C2A68A80028D59F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAC56DBA2C2A68A80028D59F /* FindMyFood */,
+				BAC56DCA2C2A68AB0028D59F /* FindMyFoodTests */,
+				BAC56DD42C2A68AB0028D59F /* FindMyFoodUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAC56DB92C2A68A80028D59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC56DC62C2A68AB0028D59F /* Preview Assets.xcassets in Resources */,
+				BAC56DC32C2A68AB0028D59F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DC92C2A68AB0028D59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DD32C2A68AB0028D59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAC56DB72C2A68A80028D59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC56DC12C2A68A80028D59F /* ContentView.swift in Sources */,
+				BAC56DBF2C2A68A80028D59F /* FindMyFoodApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DC72C2A68AB0028D59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC56DD02C2A68AB0028D59F /* FindMyFoodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC56DD12C2A68AB0028D59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC56DDA2C2A68AB0028D59F /* FindMyFoodUITests.swift in Sources */,
+				BAC56DDC2C2A68AB0028D59F /* FindMyFoodUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAC56DCD2C2A68AB0028D59F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAC56DBA2C2A68A80028D59F /* FindMyFood */;
+			targetProxy = BAC56DCC2C2A68AB0028D59F /* PBXContainerItemProxy */;
+		};
+		BAC56DD72C2A68AB0028D59F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAC56DBA2C2A68A80028D59F /* FindMyFood */;
+			targetProxy = BAC56DD62C2A68AB0028D59F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BAC56DDD2C2A68AB0028D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BAC56DDE2C2A68AB0028D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAC56DE02C2A68AB0028D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindMyFood/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAC56DE12C2A68AB0028D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindMyFood/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BAC56DE32C2A68AB0028D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMyFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMyFood";
+			};
+			name = Debug;
+		};
+		BAC56DE42C2A68AB0028D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMyFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMyFood";
+			};
+			name = Release;
+		};
+		BAC56DE62C2A68AB0028D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindMyFood;
+			};
+			name = Debug;
+		};
+		BAC56DE72C2A68AB0028D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = UCLA.FindMyFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindMyFood;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAC56DB62C2A68A80028D59F /* Build configuration list for PBXProject "FindMyFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC56DDD2C2A68AB0028D59F /* Debug */,
+				BAC56DDE2C2A68AB0028D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC56DDF2C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC56DE02C2A68AB0028D59F /* Debug */,
+				BAC56DE12C2A68AB0028D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC56DE22C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC56DE32C2A68AB0028D59F /* Debug */,
+				BAC56DE42C2A68AB0028D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC56DE52C2A68AB0028D59F /* Build configuration list for PBXNativeTarget "FindMyFoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC56DE62C2A68AB0028D59F /* Debug */,
+				BAC56DE72C2A68AB0028D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAC56DB32C2A68A80028D59F /* Project object */;
+}
