@@ -5,7 +5,7 @@ struct CreateAccountView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
-    @StateObject private var viewModel = AuthViewModel()
+    @StateObject private var viewModel = AuthViewModel.shared
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {

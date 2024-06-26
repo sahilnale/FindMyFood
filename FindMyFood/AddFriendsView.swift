@@ -66,8 +66,8 @@ struct AddFriendsView: View {
     private func searchFriends() {
         // Simulate searching for friends
         searchResults = [
-            User(name: "John Smith", profilePicture: UIImage(named: "profile_picture")),
-            User(name: "Jane Doe", profilePicture: UIImage(named: "profile_picture"))
+            User(uid: "saas",name: "John Smith", profilePicture: UIImage(named: "profile_picture")),
+            User(uid: "sdaas",name: "Jane Doe", profilePicture: UIImage(named: "profile_picture"))
         ].filter { $0.name.contains(searchText) }
     }
 
@@ -79,6 +79,6 @@ struct AddFriendsView: View {
 
 struct AddFriendsView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendsView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture")))
+        AddFriendsView(user: User(uid: "saafs",name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture")))
     }
 }

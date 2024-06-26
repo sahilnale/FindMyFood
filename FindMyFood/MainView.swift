@@ -10,18 +10,19 @@ struct MainView: View {
     @State private var showFriends = false
     @State private var selectedLocation: CLLocationCoordinate2D?
     @State private var uploadedImage: UIImage?
-    @State private var user = User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
-        User(name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
-        User(name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
-        User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
+    @State private var user = User(uid: "1235",name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
+        User(uid: "12e5",name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
+        User(uid: "12g5",name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
+        User(uid: "1265",name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
     ])
     @State private var annotations = [Post]()
     @State private var forceRefresh = false
+    @State private var shouldRecenter = false // State for recentering
 
     var body: some View {
         ZStack {
             if isLoggedIn {
-                MapView(region: $locationManager.region, posts: annotations, temporaryAnnotations: [])
+                MapView(region: $locationManager.region, posts: annotations, temporaryAnnotations: [], shouldRecenter: $shouldRecenter)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
@@ -56,6 +57,20 @@ struct MainView: View {
                     HStack {
                         Spacer()
                         VStack(spacing: 10) { // Reduced spacing between buttons
+                            Button(action: {
+                                shouldRecenter = true // Trigger recentering
+                            }) {
+                                Image(systemName: "location.circle.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(.blue)
+                                    .padding(10)
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                                    .shadow(radius: 2)
+                            }
+                            .frame(width: 50, height: 50)
                             Button(action: {
                                 showFriends = true
                             }) {

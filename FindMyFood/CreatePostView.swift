@@ -12,6 +12,7 @@ struct CreatePostView: View {
     @State private var nearbyRestaurants = [MKMapItem]()
     @State private var selectedRestaurant: MKMapItem?
     @State private var showImagePicker = false
+    @State private var center = false
     @State private var temporaryAnnotations = [MKPointAnnotation]()
 
     var onPostAdded: () -> Void
@@ -31,7 +32,7 @@ struct CreatePostView: View {
             }
 
             // MapView showing temporary annotations for selected restaurant
-            MapView(region: $locationManager.region, posts: [], temporaryAnnotations: temporaryAnnotations)
+            MapView(region: $locationManager.region, posts: [], temporaryAnnotations: temporaryAnnotations,shouldRecenter: $center)
                 .edgesIgnoringSafeArea(.all)
                 .frame(height: 300) // Adjust the height as needed
 
@@ -184,6 +185,6 @@ struct CreatePostView: View {
 
 struct CreatePostView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil), uploadedImage: .constant(nil), user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), onPostAdded: {})
+        CreatePostView(locationManager: LocationManager(), selectedLocation: .constant(nil), uploadedImage: .constant(nil), user: .constant(User(uid: "fdfd", name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), onPostAdded: {})
     }
 }

@@ -77,8 +77,8 @@ struct FriendRequestsView: View {
 
 struct FriendRequestsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendRequestsView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friendRequests: [
-            User(name: "John Doe", profilePicture: UIImage(named: "profile_picture"))
+        FriendRequestsView(user: User(uid: "sasa", name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friendRequests: [
+                                      User(uid: "sasad", name: "John Doe", profilePicture: UIImage(named: "profile_picture"))
         ]))
     }
 }

@@ -5,7 +5,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showCreateAccount = false
-    @StateObject private var viewModel = AuthViewModel()
+    @StateObject private var viewModel = AuthViewModel.shared
 
     var body: some View {
         VStack {

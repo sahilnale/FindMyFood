@@ -5,6 +5,7 @@ struct MapView: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
     var posts: [Post]
     var temporaryAnnotations: [MKPointAnnotation]
+    @Binding var shouldRecenter: Bool
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -15,7 +16,13 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.setRegion(region, animated: true)
+        if shouldRecenter {
+            uiView.setRegion(region, animated: true)
+            DispatchQueue.main.async {
+                shouldRecenter = false // Reset the flag after recentering
+            }
+        }
+
         uiView.removeAnnotations(uiView.annotations)
         
         let postAnnotations = posts.map { post -> CustomAnnotation in

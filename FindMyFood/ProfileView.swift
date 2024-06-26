@@ -7,6 +7,7 @@ struct ProfileView: View {
     @State private var newProfileImage: UIImage?
     @Environment(\.presentationMode) var presentationMode
     var onProfilePictureChanged: () -> Void
+    @StateObject private var viewModel = AuthViewModel.shared
 
     var body: some View {
         VStack {
@@ -70,6 +71,9 @@ struct ProfileView: View {
         if let newProfileImage = newProfileImage {
             user.profilePicture = newProfileImage
             onProfilePictureChanged() // Call the re-render function
+            Task {
+                await viewModel.updateUserData(user)
+            }
         }
     }
 
@@ -81,6 +85,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: .constant(User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), isLoggedIn: .constant(true), onProfilePictureChanged: {})
+        ProfileView(user: .constant(User(uid: "1234", name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"))), isLoggedIn: .constant(true), onProfilePictureChanged: {})
     }
 }

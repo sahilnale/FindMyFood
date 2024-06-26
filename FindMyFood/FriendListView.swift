@@ -114,10 +114,11 @@ struct FriendListView: View {
 
 struct FriendListView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendListView(user: User(name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
-            User(name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
-            User(name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
-            User(name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
+        FriendListView(user: User(uid: "1235",name: "Sahil Nale", profilePicture: UIImage(named: "profile_picture"), friends: [
+            User(uid: "12e5",name: "Nikhil Kichili", profilePicture: UIImage(named: "profile_picture")),
+            User(uid: "12g5",name: "Krishna Dua", profilePicture: UIImage(named: "profile_picture")),
+            User(uid: "1265",name: "Dhruv Patak", profilePicture: UIImage(named: "profile_picture"))
         ]))
     }
 }
+
