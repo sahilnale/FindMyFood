@@ -22,7 +22,7 @@ FindMyFood is a comprehensive social networking app that integrates location-bas
 
 ## Screenshots
 
-![Login Screen](https://drive.google.com/file/d/1yAZ3Pfe8BIjJfMwEBkEqmPp77UoFoMnL/preview)
+![Login Screen](https://drive.google.com/uc?export=view&id=<1yAZ3Pfe8BIjJfMwEBkEqmPp77UoFoMnL>)
 ![Profile Screen](https://drive.google.com/file/d/1vNyqp7eUM9AywcuwsW2YVyn2cKJm1nR2/preview)
 ![Map View](https://drive.google.com/file/d/1b12JIkcs0zdRIftNpWJRMO_rGzktsWgZ/preview)
 ![Create Post](https://drive.google.com/file/d/1khQ6ogsQLv-9DG35Dqx1Z8o7i-V1i9wB/preview)
