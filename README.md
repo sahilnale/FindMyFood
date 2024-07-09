@@ -1,61 +1,71 @@
-FindMyFood
-FindMyFood is a full-stack iOS application designed to help users manage and share their restaurant visits. The app provides interactive map views, user profile management, and dynamic data handling.
+# FindMyFood
 
-Features
-User Authentication: Secure user authentication using Firebase.
-Interactive Map Views: Explore restaurants and add new visits with MapKit.
-Profile Management: Update profile information and manage friend requests.
-Post Sharing: Share restaurant visits with friends, including photos stored on AWS S3.
-Friend Management: Add and manage friends, and handle friend requests.
-Technologies Used
-Swift: Primary language for iOS development.
-SwiftUI: User interface framework for building UI components.
-Combine: Framework for handling asynchronous events.
-MapKit: Framework for embedding maps and handling location data.
-Firebase: Backend services for authentication and data storage.
-AWS S3: Storage service for managing media files.
-Installation
-Clone the repository:
+FindMyFood is a comprehensive social networking app that integrates location-based services to help users discover, share, and manage their favorite food spots. Built with a robust tech stack, it leverages AWS S3 for image storage and Firebase for user authentication and data management.
 
-bash
-Copy code
-git clone https://github.com/yourusername/FindMyFood.git
-cd FindMyFood
-Install dependencies:
-Make sure you have the latest version of Xcode installed. Open the project in Xcode and resolve any dependencies.
+## Features
 
-Configure Firebase:
+- **User Authentication**: Secure login and registration with Firebase Authentication.
+- **Profile Management**: Users can update their profile picture and personal information.
+- **Friend Management**: Add, remove, and manage friends. Handle friend requests.
+- **Post Creation**: Share favorite food spots by creating posts with images and locations.
+- **Map Integration**: View and explore posts on a map with dynamic annotations.
+- **AWS S3**: Store and manage images using AWS S3.
 
-Set up a Firebase project and add your iOS app.
-Download the GoogleService-Info.plist file from your Firebase console and add it to your Xcode project.
-Configure AWS S3:
+## Tech Stack
 
-Set up an AWS S3 bucket and configure the necessary permissions.
-Update your project with the necessary AWS credentials and configuration.
-Usage
-Run the App:
-Open the project in Xcode and build/run the project on a simulator or a physical device.
+- **Frontend**: SwiftUI
+- **Backend**: Firebase Firestore, Firebase Authentication
+- **Location Services**: CoreLocation, MapKit
+- **Storage**: AWS S3
+- **Image Handling**: UIImagePickerController, AWS S3
+- **Networking**: Combine, URLSession
 
-Sign Up/Log In:
-Create an account or log in using an existing account.
+## Installation
 
-Explore and Add Posts:
-Use the interactive map to explore restaurants and add new visits. Upload photos and share your experience with friends.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/FindMyFood.git
+    ```
 
-Manage Profile and Friends:
-Update your profile information, manage friend requests, and view your friends' posts.
+2. Install dependencies using CocoaPods:
+    ```sh
+    cd FindMyFood
+    pod install
+    ```
 
-Screenshots
+3. Open the Xcode workspace:
+    ```sh
+    open FindMyFood.xcworkspace
+    ```
 
+4. Configure Firebase:
+    - Download your `GoogleService-Info.plist` from the Firebase console.
+    - Add the `GoogleService-Info.plist` file to your Xcode project.
 
+5. Configure AWS S3:
+    - Set up your AWS S3 bucket.
+    - Update your AWS configuration in the app.
 
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+## Usage
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+1. Register or log in to your account.
+2. Update your profile with a profile picture.
+3. Add friends by searching for them and sending friend requests.
+4. Accept or reject friend requests.
+5. Create posts by selecting a location on the map and uploading an image.
+6. View your friends' posts on the map.
 
-Contact
-For any inquiries, please contact:
+## Contributing
 
-Sahil Nale - LinkedIn | GitHub
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [Firebase](https://firebase.google.com/)
+- [AWS S3](https://aws.amazon.com/s3/)
+- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+- [MapKit](https://developer.apple.com/documentation/mapkit/)
