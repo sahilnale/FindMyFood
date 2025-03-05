@@ -89,7 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [MapKit](https://developer.apple.com/documentation/mapkit/)
 
 
-
+``` mermaid
 graph TD
 A[User Input] --> B[Travel Preferences]
 B --> C[Morning Activities]
@@ -113,4 +113,4 @@ R3[Cost]
 R4[Transportation]
 R5[Weather Notes]
 end
-
+```
