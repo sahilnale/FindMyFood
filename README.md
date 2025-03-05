@@ -87,3 +87,30 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [AWS S3](https://aws.amazon.com/s3/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 - [MapKit](https://developer.apple.com/documentation/mapkit/)
+
+
+
+graph TD
+A[User Input] --> B[Travel Preferences]
+B --> C[Morning Activities]
+C --> D[Afternoon Activities]
+D --> E[Evening Activities]
+E --> F[Complete Itinerary]
+
+subgraph "User Inputs"
+I1[Destination] --> B
+I2[Interests] --> B
+I3[Budget] --> B
+I4[Activity Level] --> B
+I5[Season] --> B
+I6[Dietary Needs] --> B
+end
+
+subgraph "Each Activity Contains"
+R1[Location]
+R2[Duration]
+R3[Cost]
+R4[Transportation]
+R5[Weather Notes]
+end
+
